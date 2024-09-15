@@ -7,7 +7,7 @@ import CardGetterVehicles from "../components/cardGetterVehicles";
 import NavBar from "./navbar";
 
 const Home = () => {
-  const { state, dispatch } = useContext(Context);
+  const { dispatch } = useContext(Context);
 
   const fetchForCharacters = async () => {
     try {

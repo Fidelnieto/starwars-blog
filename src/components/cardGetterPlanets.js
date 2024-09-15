@@ -1,10 +1,8 @@
 import React, { useContext } from "react";
-import { Context } from "../js/provider";
+
 import CardPlanets from "./cardPlanets";
 
 const CardGetterPlanets = () => {
-  const { state } = useContext(Context);
-
   return (
     <div className=" d-flex col-8 overflow-auto mx-auto mt-4 ">
       <CardPlanets

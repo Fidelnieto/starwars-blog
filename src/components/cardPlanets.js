@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 const CardPlanets = (props) => {
   const [details, setDetails] = useState(null);
-  const { id, urlImage, urlLearnMore } = props;
+  const { id, urlImage } = props;
 
   const fetchPlanetsDetails = async (id) => {
     try {

@@ -1,10 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import CardCharacter from "./cardCharacter";
-import { Context } from "../js/provider";
 
 const CardGetterCharacter = () => {
-  const { state } = useContext(Context);
-
   return (
     <div className=" d-flex col-8 overflow-auto mx-auto mt-4 ">
       <CardCharacter
