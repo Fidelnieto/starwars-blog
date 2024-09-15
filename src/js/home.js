@@ -1,6 +1,10 @@
 import React, { useContext, useEffect } from "react";
 import { Context } from "./provider";
 import { REDUCER_ACTION_TYPES } from "./constants";
+import CardGetterCharacter from "../components/cardGetterCharacter";
+import CardGetterPlanets from "../components/cardGetterPlanets";
+import CardGetterVehicles from "../components/cardGetterVehicles";
+import NavBar from "./navbar";
 
 const Home = () => {
   const { state, dispatch } = useContext(Context);
@@ -76,12 +80,19 @@ const Home = () => {
 
   return (
     <div className="">
-      <h1>Characters</h1>
-      {state.characters.find((item) => item.uid === "1")?.name}
-      <h1>Planets</h1>
-      {state.planets.find((item) => item.uid === "1")?.name}
-      <h1>Vehicles</h1>
-      {state.vehicles.find((item) => item.uid === "4")?.name}
+      <NavBar />
+
+      <h1 className="text-danger">Characters</h1>
+      {/* {state.characters.find((item) => item.uid === "1")?.name} */}
+      <CardGetterCharacter />
+
+      <h1 className="text-danger">Planets</h1>
+      {/* {state.planets.find((item) => item.uid === "1")?.name} */}
+      <CardGetterPlanets />
+
+      <h1 className="text-danger">Vehicles</h1>
+      {/* {state.vehicles.find((item) => item.uid === "4")?.name} */}
+      <CardGetterVehicles />
     </div>
   );
 };

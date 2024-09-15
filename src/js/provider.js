@@ -5,6 +5,7 @@ const initialContext = {
   characters: [],
   planets: [],
   vehicles: [],
+  favorites: [],
 };
 
 export const Context = React.createContext(initialContext);
