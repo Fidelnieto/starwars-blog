@@ -1,0 +1,6 @@
+export const REDUCER_ACTION_TYPES = {
+  ADD: "ADD",
+  UPDATE: "UPDATE",
+  REMOVE: "REMOVE",
+  FETCH: "FETCH",
+};
