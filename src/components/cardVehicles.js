@@ -10,7 +10,7 @@ const CardVehicles = (props) => {
       const data = await response.json();
       setDetails(data.result.properties);
     } catch (error) {
-      console.error("Error fetching character details:", error);
+      console.error("Error fetching vehicles details:", error);
     }
   };
 
@@ -19,7 +19,7 @@ const CardVehicles = (props) => {
   }, [id]);
 
   if (!details) {
-    return <div>Loading...</div>;
+    return <div className="text-center fs-1">Loading...</div>;
   }
 
   return (
@@ -51,7 +51,7 @@ const CardVehicles = (props) => {
         </p>
 
         <div className="d-flex justify-content-between">
-          <a href={urlLearnMore} className="btn btn-primary">
+          <a href={`/vehicles/${id}`} className="btn btn-primary">
             Learn More
           </a>
           <a href="#" className="btn btn-primary">

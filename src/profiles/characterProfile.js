@@ -20,6 +20,12 @@ const CharacterProfile = () => {
         2: "https://upload.wikimedia.org/wikipedia/en/5/5c/C-3PO_droid.png",
         3: "https://m.media-amazon.com/images/I/61srwGulapL._AC_UF894,1000_QL80_.jpg",
         4: "https://lumiere-a.akamaihd.net/v1/images/darth-vader-main_4560aff7.jpeg?region=71%2C0%2C1139%2C854",
+        5: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyzJ8jRjPXOEYiWhXHwZxT8aJXc9DS-WtV-Q&s",
+        6: "https://www.hollywoodreporter.com/wp-content/uploads/2023/05/Joel-Edgerton-Obi-Wan-Kenobi-Publicity-H-2023.jpg",
+        7: "https://www.figurerealm.com/userimages/characterprofiles/2500/2466-2-58cbe33f4de09.jpg",
+        8: "https://lumiere-a.akamaihd.net/v1/images/r5-d4_main_image_7d5f078e.jpeg?region=374%2C0%2C1186%2C666",
+        9: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTj8om-Zr0cX4-E2AYGXfgMzdKVfFLF_zbvLw&s",
+        10: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDLQWrixX_GQdaHGhLmY6XakCorjvBJ40hBw&s",
       };
 
       setUrlImage(imageUrls[id]);
@@ -33,7 +39,7 @@ const CharacterProfile = () => {
   }, [id]);
 
   if (!detailCharacter) {
-    return <div>Loading...</div>;
+    return <div className="text-center fs-1">Loading...</div>;
   }
 
   return (

@@ -19,7 +19,7 @@ const CardCharacter = (props) => {
   }, [id]);
 
   if (!details) {
-    return <div>Loading...</div>;
+    return <div className="text-center fs-1">Loading...</div>;
   }
 
   return (

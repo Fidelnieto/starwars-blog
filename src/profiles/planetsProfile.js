@@ -17,9 +17,15 @@ const PlanetsProfile = () => {
 
       const imageUrls = {
         1: "https://concepto.de/wp-content/uploads/2018/09/desierto2-e1537800205712.jpg",
-        2: "https://upload.wikimedia.org/wikipedia/en/5/5c/C-3PO_droid.png",
-        3: "https://m.media-amazon.com/images/I/61srwGulapL._AC_UF894,1000_QL80_.jpg",
-        4: "https://lumiere-a.akamaihd.net/v1/images/darth-vader-main_4560aff7.jpeg?region=71%2C0%2C1139%2C854",
+        2: "https://lumiere-a.akamaihd.net/v1/images/alderaan-main_f5b676cf.jpeg?region=0%2C0%2C1280%2C720",
+        3: "https://static1.cbrimages.com/wordpress/wp-content/uploads/2022/06/image-1-2400x1200-562320997426.jpg",
+        4: "https://static1.srcdn.com/wordpress/wp-content/uploads/2019/08/star-wars-empire-strikes-back-hoth-ion-canon-echo-base-Edited.jpg",
+        5: "https://lumiere-a.akamaihd.net/v1/images/Dagobah_890df592.jpeg?region=0%2C80%2C1260%2C630",
+        6: "https://static1.srcdn.com/wordpress/wp-content/uploads/2020/02/Bespin-Feature-Image-1.jpg",
+        7: "https://lumiere-a.akamaihd.net/v1/images/databank_endor_01_169_68ba9bdc.jpeg?region=0%2C49%2C1560%2C780",
+        8: "https://media.contentapi.ea.com/content/dam/walrus/images/2018/11/mapvista-theed-grid.jpg.adapt.crop191x100.628p.jpg",
+        9: "https://images.theconversation.com/files/516919/original/file-20230322-984-capxez.jpeg?ixlib=rb-4.1.0&q=45&auto=format&w=754&fit=clip",
+        10: "https://www.clarksvilleonline.com/wp-content/uploads/2016/12/NASAs-Space-Exploration-could-discover-planets-similar-to-ones-in-Star-Wars-Rogue-One-5.jpg",
       };
 
       setUrlImage(imageUrls[id]);
@@ -33,7 +39,7 @@ const PlanetsProfile = () => {
   }, [id]);
 
   if (!detailPlanet) {
-    return <div>Loading...</div>;
+    return <div className="text-center fs-1">Loading...</div>;
   }
 
   return (

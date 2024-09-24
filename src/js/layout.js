@@ -4,6 +4,7 @@ import Home from "./home";
 import NotFound from "./notfound";
 import CharacterProfile from "../profiles/characterProfile";
 import PlanetsProfile from "../profiles/planetsProfile";
+import VehiclesProfile from "../profiles/vehiclesProfile";
 
 const Layout = () => {
   const basename = process.env.BASENAME || "";
@@ -15,6 +16,7 @@ const Layout = () => {
           <Route path="/" element={<Home />} />
           <Route path="/character/:id" element={<CharacterProfile />} />
           <Route path="/planets/:id" element={<PlanetsProfile />} />
+          <Route path="/vehicles/:id" element={<VehiclesProfile />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

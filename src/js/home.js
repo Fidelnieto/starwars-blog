@@ -82,15 +82,15 @@ const Home = () => {
     <div className="">
       <NavBar />
 
-      <h1 className="text-danger">Characters</h1>
+      <h1 className="text-danger  ms-5 mt-2">Characters</h1>
       {/* {state.characters.find((item) => item.uid === "1")?.name} */}
       <CardGetterCharacter />
 
-      <h1 className="text-danger">Planets</h1>
+      <h1 className="text-danger ms-5 mt-2">Planets</h1>
       {/* {state.planets.find((item) => item.uid === "1")?.name} */}
       <CardGetterPlanets />
 
-      <h1 className="text-danger">Vehicles</h1>
+      <h1 className="text-danger ms-5 mt-2">Vehicles</h1>
       {/* {state.vehicles.find((item) => item.uid === "4")?.name} */}
       <CardGetterVehicles />
     </div>

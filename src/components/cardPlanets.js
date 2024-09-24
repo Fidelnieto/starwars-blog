@@ -10,7 +10,7 @@ const CardPlanets = (props) => {
       const data = await response.json();
       setDetails(data.result.properties);
     } catch (error) {
-      console.error("Error fetching character details:", error);
+      console.error("Error fetching planets details:", error);
     }
   };
 
@@ -19,7 +19,7 @@ const CardPlanets = (props) => {
   }, [id]);
 
   if (!details) {
-    return <div>Loading...</div>;
+    return <div className="text-center fs-1">Loading...</div>;
   }
 
   return (

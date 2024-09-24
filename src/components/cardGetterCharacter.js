@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import CardCharacter from "./cardCharacter";
 
 const CardGetterCharacter = () => {
+  const id = [1, 2, 3, 4, 5, 6, 7, 8, 9];
   return (
     <div className=" d-flex col-8 overflow-auto mx-auto mt-4 ">
       <CardCharacter
@@ -22,27 +23,27 @@ const CardGetterCharacter = () => {
       />
       <CardCharacter
         id={5}
-        urlImage="https://pngimg.com/d/raccoon_PNG16977.png"
+        urlImage="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyzJ8jRjPXOEYiWhXHwZxT8aJXc9DS-WtV-Q&s"
       />
       <CardCharacter
         id={6}
-        urlImage="https://pngimg.com/d/raccoon_PNG16977.png"
+        urlImage="https://www.hollywoodreporter.com/wp-content/uploads/2023/05/Joel-Edgerton-Obi-Wan-Kenobi-Publicity-H-2023.jpg"
       />
       <CardCharacter
         id={7}
-        urlImage="https://pngimg.com/d/raccoon_PNG16977.png"
+        urlImage="https://www.figurerealm.com/userimages/characterprofiles/2500/2466-2-58cbe33f4de09.jpg"
       />
       <CardCharacter
         id={8}
-        urlImage="https://pngimg.com/d/raccoon_PNG16977.png"
+        urlImage="https://lumiere-a.akamaihd.net/v1/images/r5-d4_main_image_7d5f078e.jpeg?region=374%2C0%2C1186%2C666"
       />
       <CardCharacter
         id={9}
-        urlImage="https://pngimg.com/d/raccoon_PNG16977.png"
+        urlImage="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTj8om-Zr0cX4-E2AYGXfgMzdKVfFLF_zbvLw&s"
       />
       <CardCharacter
         id={10}
-        urlImage="https://pngimg.com/d/raccoon_PNG16977.png"
+        urlImage="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDLQWrixX_GQdaHGhLmY6XakCorjvBJ40hBw&s"
       />
     </div>
   );
