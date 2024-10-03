@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
   return (
@@ -18,7 +19,11 @@ const NavBar = () => {
             className="d-inline-block ms-5"
           />
         </a>
-        <button className="btn btn-primary me-5">Favorites</button>
+        <div className="d-flex">
+          <Link to="/favorites" className="btn btn-outline-primary">
+            Favorites
+          </Link>
+        </div>
       </div>
     </nav>
   );

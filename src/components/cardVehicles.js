@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { Context } from "../js/provider";
 
 const CardVehicles = (props) => {
   const [details, setDetails] = useState(null);
-  const { id, urlImage, urlLearnMore } = props;
+  const { id, urlImage } = props;
+  const { state, dispatch } = useContext(Context);
 
   const fetchVehiclesDetails = async (id) => {
     try {
@@ -14,6 +16,19 @@ const CardVehicles = (props) => {
     }
   };
 
+  const toggleFavorite = () => {
+    const isFavorite = state.favorites.some((fav) => fav.uid === id);
+
+    if (isFavorite) {
+      dispatch({ type: "REMOVE_FAVORITE", payload: { uid: id } });
+    } else {
+      dispatch({
+        type: "ADD_FAVORITE",
+        payload: { uid: id, name: details.name, urlImage },
+      });
+    }
+  };
+
   useEffect(() => {
     fetchVehiclesDetails(id);
   }, [id]);
@@ -21,6 +36,7 @@ const CardVehicles = (props) => {
   if (!details) {
     return <div className="text-center fs-1">Loading...</div>;
   }
+  const isFavorite = state.favorites.some((fav) => fav.uid === id);
 
   return (
     <div
@@ -54,9 +70,9 @@ const CardVehicles = (props) => {
           <a href={`/vehicles/${id}`} className="btn btn-primary">
             Learn More
           </a>
-          <a href="#" className="btn btn-primary">
-            ❤️
-          </a>
+          <button onClick={toggleFavorite} className="btn btn-primary">
+            {isFavorite ? "❤️ Remove" : "❤️ Add"}
+          </button>
         </div>
       </div>
     </div>
