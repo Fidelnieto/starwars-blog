@@ -17,14 +17,17 @@ const CardVehicles = (props) => {
   };
 
   const toggleFavorite = () => {
-    const isFavorite = state.favorites.some((fav) => fav.uid === id);
+    const uniqueId = `vehicles/${id}`;
+    const isFavorite = state.favorites.some((fav) => fav.uniqueId === uniqueId);
+
+    console.log("Toggling favorite for:", uniqueId);
 
     if (isFavorite) {
-      dispatch({ type: "REMOVE_FAVORITE", payload: { uid: id } });
+      dispatch({ type: "REMOVE_FAVORITE", payload: { uniqueId } });
     } else {
       dispatch({
         type: "ADD_FAVORITE",
-        payload: { uid: id, name: details.name, urlImage },
+        payload: { uniqueId, name: details.name, urlImage, type: "vehicles" },
       });
     }
   };
@@ -36,7 +39,10 @@ const CardVehicles = (props) => {
   if (!details) {
     return <div className="text-center fs-1">Loading...</div>;
   }
-  const isFavorite = state.favorites.some((fav) => fav.uid === id);
+
+  const isFavorite = state.favorites.some(
+    (fav) => fav.uniqueId === `character/${id}`
+  );
 
   return (
     <div

@@ -17,14 +17,17 @@ const CardPlanets = (props) => {
   };
 
   const toggleFavorite = () => {
-    const isFavorite = state.favorites.some((fav) => fav.uid === id);
+    const uniqueId = `planets/${id}`;
+    const isFavorite = state.favorites.some((fav) => fav.uniqueId === uniqueId);
+
+    console.log("Toggling favorite for:", uniqueId);
 
     if (isFavorite) {
-      dispatch({ type: "REMOVE_FAVORITE", payload: { uid: id } });
+      dispatch({ type: "REMOVE_FAVORITE", payload: { uniqueId } });
     } else {
       dispatch({
         type: "ADD_FAVORITE",
-        payload: { uid: id, name: details.name, urlImage },
+        payload: { uniqueId, name: details.name, urlImage, type: "planets" },
       });
     }
   };
@@ -37,7 +40,10 @@ const CardPlanets = (props) => {
     return <div className="text-center fs-1">Loading...</div>;
   }
 
-  const isFavorite = state.favorites.some((fav) => fav.uid === id);
+  const isFavorite = state.favorites.some(
+    (fav) => fav.uniqueId === `planets/${id}`
+  );
+
   return (
     <div
       className="inline-block card col-3"

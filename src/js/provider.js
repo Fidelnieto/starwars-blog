@@ -5,7 +5,7 @@ const initialContext = {
   characters: [],
   planets: [],
   vehicles: [],
-  favorites: [],
+  favorites: JSON.parse(localStorage.getItem("favorites")) || [], // Cargar favoritos desde el Local Storage
 };
 
 export const Context = React.createContext(initialContext);
@@ -14,12 +14,9 @@ export const Provider = ({ children }) => {
   const [state, dispatch] = useReducer(Reducer, initialContext);
 
   useEffect(() => {
-    const savedFavorites = localStorage.getItem("favorites");
-    if (savedFavorites) {
-      dispatch({
-        type: "LOAD_FAVORITES",
-        payload: JSON.parse(savedFavorites),
-      });
+    const storedFavorites = JSON.parse(localStorage.getItem("favorites"));
+    if (storedFavorites) {
+      dispatch({ type: "LOAD_FAVORITES", payload: storedFavorites });
     }
   }, []);
 

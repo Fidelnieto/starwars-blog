@@ -4,20 +4,22 @@ export const Reducer = (state, action) => {
   const newState = { ...state };
 
   switch (action.type) {
-    case REDUCER_ACTION_TYPES.ADD:
-      newState[action.payload.key] = action.payload.data;
-      return newState;
     case "ADD_FAVORITE":
-      const updatedFavoritesAdd = [...state.favorites, action.payload];
-      localStorage.setItem("favorites", JSON.stringify(updatedFavoritesAdd));
-      return {
-        ...state,
-        favorites: updatedFavoritesAdd,
-      };
+      if (
+        !state.favorites.some((fav) => fav.uniqueId === action.payload.uniqueId)
+      ) {
+        const updatedFavoritesAdd = [...newState.favorites, action.payload];
+        localStorage.setItem("favorites", JSON.stringify(updatedFavoritesAdd));
+        return {
+          ...newState,
+          favorites: updatedFavoritesAdd,
+        };
+      }
+      return state;
 
     case "REMOVE_FAVORITE":
       const updatedFavoritesRemove = state.favorites.filter(
-        (item) => item.uid !== action.payload.uid
+        (item) => item.uniqueId !== action.payload.uniqueId
       );
       localStorage.setItem("favorites", JSON.stringify(updatedFavoritesRemove));
       return {
